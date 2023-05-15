@@ -1,0 +1,47 @@
+﻿NAMESPACES
+
+
+ 1.A name can only represent one entity. So, there cannot be two variables with the same name in the same scope. 
+ Using namespaces, we can create two variables or member functions having the same name. 
+ 2.We can have same name in different classes and different namespaces
+ 3.Within a namespace we can declate function, class and variables and etc.
+ 3.Using declaration - can access particular element rather than declaring the whole thing as a namespace 
+ ** using namespace std is bad ** DON'T DO IT
+ 4.Declaration stops unnecessary interations between the code also called as ENCAPSULATION.
+ 5.Nested namspace exist and we can make methods out of different namespaces.
+
+
+
+                     *****  KAID'S WISDOM  (ノಠൠಠ)ノ彡┻━┻    *****
+
+
+
+//this is inside of c++ ready for you
+
+namespace std{
+  //this is where all of the stuff you included in iostream is
+}
+
+//lets say this is where our program starts
+
+namespace mynamespace{
+  void myfunc();
+}
+
+
+//this is our own namespace
+//what if both namespaces have a myfunc()?
+//we pick by typing either std::myfunc() or mynamespace::myfunc()
+
+//std:: is just using something from the std namespace that c++ gives us
+
+//when you add
+using namespace std;
+//you're telling c++ to assume you want the one from the std namespace without having to specify
+//so now you can do myfunc() without putting std:: first
+//you can use whatever namespace you like, not just std
+//if we put
+using namespace mynamespace;
+//now c++ will assume we want the myfunc() from mynamespace
+//the problem with using a namespace is if one part thinks you're using std and another thinks you're using mynamespace and call the wrong myfunc by accident
+//that's why it's best to just type std::myfunc() and mynamespace::myfunc() separately
